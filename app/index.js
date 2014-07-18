@@ -37,6 +37,10 @@ var UcpfisGenerator = yeoman.generators.Base.extend({
     //var destRoot = this.destinationRoot();
   },
   askFor: function () {
+  
+   // have Yeoman greet the user
+   console.log(this.yeoman);
+   
    var done = this.async();
   // var destRoot = this.destinationRoot();
   // var projectName=path.basename(destRoot);
