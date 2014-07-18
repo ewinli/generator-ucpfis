@@ -1,0 +1,24 @@
+{
+  "name": "<%= _.slugify(projectName) %>",
+  "version": "<%=version%>",
+  "ignore": [
+    "**/.*",
+    "*.md",
+    "fis-conf.js",
+    "package.json",
+    "bower.json"
+  ],
+  "dependencies": {
+     <%
+      var libCount=0;
+     %>
+     <% if (libs["jquery"]) {  if( libCount++>0){%>,<% } %> "jquery": "latest" <% } %>
+  },
+  "devDependencies": {
+ 
+  },
+  "keywords": [
+    "ucplus"
+  ]
+}
+

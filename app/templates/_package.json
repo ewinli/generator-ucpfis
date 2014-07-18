@@ -1,0 +1,12 @@
+{
+  "name": "<%= _.slugify(projectName) %>",
+  "version": "<%=version%>",
+  "description": "",
+  "author": {
+    "name": "ucplus"
+  },
+  "keywords": [],
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {}
+}
