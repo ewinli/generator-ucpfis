@@ -1,6 +1,8 @@
  /*global fis */ 
-fis.config.set('static','');
+fis.config.set('static','public');
 fis.config.set('app','/app');
+fis.config.set('settings.postpackager.ucpfis.autoCombine', true);
+fis.config.set('settings.postpackager.ucpfis.pkgPath', "public");
 var _DOMAIN='http://localhost:9000/public';
 
 fis.config.merge({
@@ -10,7 +12,7 @@ fis.config.merge({
 		    {
 			   reg : /^\/views\/(.*)$/i,
                id:'$1',
-               release: '../${app}/views/$1'
+               release: '${app}/views/$1'
 			},
              {
                reg : /^\/libs\/(.*)$/i,
@@ -31,7 +33,7 @@ fis.config.merge({
             },*/
             {
                 //modules目录下的其他文件
-                reg : /^\/(component_modules|components)\/(.*)\.(js|less|css)$/i,
+                reg : /^\/(component_modules|components)\/(.*)\.(.*)$/i,
                 //是组件化的，会被jswrapper包装
                 isMod : true,
                 //less和css文件会做csssprite处理
@@ -40,6 +42,10 @@ fis.config.merge({
                 id : '$2',
                 release : '${static}/components/$2.$3'
             },
+			{
+			     reg : /node_modules(.*)/,
+				 release:false
+			},
             {
                 //.mixin.less后缀的文件
                 reg : /\.mixin\.less$/,
@@ -69,7 +75,7 @@ fis.config.merge({
             },
             {
                 //map.json没什么用，就不要发布了
-                reg : /(map|bower|package).json/,
+                reg : /(bower|package).json/,
                 release : false
             }
         ],
@@ -89,7 +95,7 @@ fis.config.merge({
             js : 'jshint'
         },
        // postpackager : 'seajs'
-        postpackager : 'simple'
+        postpackager : 'ucpfis'
     },
     settings : {
         
@@ -121,12 +127,12 @@ fis.config.merge({
 fis.config.merge({
     deploy:{
        local:{
-          to:'./local/public'
+          to:'./local'
        },
        play:{
-          to:'../public'
+          to:'../'
        }
     }
 });
 
-fis.config.set('settings.postpackager.simple.autoCombine', true);
+

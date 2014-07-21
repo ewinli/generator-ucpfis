@@ -7,6 +7,8 @@
   },
   "keywords": [],
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "fis-postpackager-ucpfis":">=0.0.0"
+  },
   "devDependencies": {}
 }
