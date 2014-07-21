@@ -1,8 +1,10 @@
+define('ucelf/event', function(require, exports, module){
+
 /**
     Event Module
  */
 /*jshint bitwise: false */
-define(function (require, exports, module) {
+
     'use strict';
 
     var _ = require('./lang'),
@@ -399,4 +401,6 @@ define(function (require, exports, module) {
     Event.Handlers = Handlers;
     Event.Promise = Promise;
     module.exports = Event;
+
+
 });

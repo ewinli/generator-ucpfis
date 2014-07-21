@@ -1,10 +1,12 @@
+define('ucelf/router', function(require, exports, module){
+
 /**
     Router
     inspired by TJ Holowaychuk's page.js
     https://github.com/visionmedia/page.js
  */
 /*jshint bitwise: false */
-define(function (require, exports, module) {
+
     'use strict';
 
     var _ = require('./lang'),
@@ -276,4 +278,6 @@ define(function (require, exports, module) {
     router._Context = Context;
     router.parse = parse;
     module.exports = router;
+
+
 });

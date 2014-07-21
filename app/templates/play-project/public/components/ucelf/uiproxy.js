@@ -1,9 +1,11 @@
+define('ucelf/uiproxy', function(require, exports, module){
+
 /**
  * UIProxy Module
  * create by nino
  */
  /*jshint loopfunc: true */
-define(function (require, exports, module) {
+
     'use strict';
 
     var _ = require('./lang'),
@@ -942,4 +944,6 @@ define(function (require, exports, module) {
     };
 
     module.exports = UIProxy;
+
+
 });

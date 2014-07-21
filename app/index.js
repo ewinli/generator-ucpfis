@@ -128,6 +128,8 @@ var UcpfisGenerator = yeoman.generators.Base.extend({
 
     this.mkdir('components');
 
+    this.mkdir('component_modules');
+
     this.mkdir('libs');
 
     this.mkdir('views');
@@ -141,23 +143,24 @@ var UcpfisGenerator = yeoman.generators.Base.extend({
   play:function(){
 
   },
-  components:function(){
+  componentModules:function(){
      if(this.libs.ucelf){
-        this.directory('components/ucelf','components/ucelf');
+        this.directory('component_modules/ucelf','component_modules/ucelf');
      }
      if(this.libs.zepto){
-        this.directory('components/zepto','components/zepto');
+        this.directory('component_modules/zepto','component_modules/zepto');
      }
+ 
+  },
+  components:function(){
      if(this.demo===true){
          this.copy('components/main.js','components/main.js');
+         this.directory('components/style','components/style');
      }
   },
   libs: function () {
      if(this.libs.seajs){
         this.copy('libs/seajs/sea.js','libs/seajs/sea.js');
-     }
-     if(this.demo===true){
-         this.directory('libs/style','libs/style');
      }
   },
   views:function(){

@@ -1,8 +1,10 @@
+define('ucelf/network', function(require, exports, module){
+
 /**
  * Network Module
  */
 /*jshint eqnull: true, browser: true */
-define(function (require, exports) {
+
     'use strict';
 
     var _ = require('./lang'),
@@ -422,4 +424,6 @@ define(function (require, exports) {
         }
         return defaults.onSuccess || empty;
     }
+
+
 });

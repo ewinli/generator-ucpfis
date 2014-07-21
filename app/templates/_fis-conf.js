@@ -7,38 +7,38 @@ fis.config.merge({
     roadmap : {
         domain:_DOMAIN,
         path : [
-             {
-               reg : /^\/views\/(.*)$/i,
+		    {
+			   reg : /^\/views\/(.*)$/i,
                id:'$1',
                release: '../${app}/views/$1'
-             },
+			},
              {
                reg : /^\/libs\/(.*)$/i,
                id:'$1',
                release: '${static}/libs/$1'
              },
-            {
-                //一级同名组件，可以引用短路径，比如sea-modules/jquery/juqery.js
+            /*{
+                //一级同名组件，可以引用短路径，比如modules/jquery/juqery.js
                 //直接引用为var $ = require('jquery');
-                reg : /^\/components\/([^\/]+)\/(\1\.(js|less|css))$/i,
+                reg : /^\/(component_modules|components)\/([^\/]+)\/(\1\.(js|less|css))$/i,
                 //是组件化的，会被jswrapper包装
                 isMod : true,
                 //less和css文件会做csssprite处理
                 useSprite : true,
                 //id为文件夹名
-                id : '$1',
-                release : '${static}/components/$1/$2'
-            },
+                id : '$2',
+                release : '${static}/components/$2/$3'
+            },*/
             {
-                //components目录下的其他文件
-                reg : /^\/components\/(.*)\.(js|less|css)$/i,
+                //modules目录下的其他文件
+                reg : /^\/(component_modules|components)\/(.*)\.(js|less|css)$/i,
                 //是组件化的，会被jswrapper包装
                 isMod : true,
                 //less和css文件会做csssprite处理
                 useSprite : true,
-                //id是去掉sea-modules和.js后缀中间的部分
-                id : '$1',
-                release : '${static}/components/$1.$2'
+                //id是去掉modules和.js后缀中间的部分
+                id : '$2',
+                release : '${static}/components/$2.$3'
             },
             {
                 //.mixin.less后缀的文件

@@ -1,3 +1,5 @@
+define('main', function(require, exports, module){
+
 'use strict';
 
 var $ = require('zepto/zepto');
@@ -9,3 +11,6 @@ function main(){
 }
 
 main();
+
+
+});

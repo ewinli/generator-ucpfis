@@ -1,7 +1,9 @@
+define('ucelf/selector', function(require, exports, module){
+
 /**
  * Selector Module
  */
-define(function (require, exports, module) {
+
     'use strict';
 
     var $ = require('zepto');
@@ -45,4 +47,6 @@ define(function (require, exports, module) {
     };
 
     module.exports = $;
+
+
 });

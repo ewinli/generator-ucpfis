@@ -1,3 +1,3 @@
 cd webapp
-fis release --domains -ompd play
+call fis release --domains -ompd play
 cd ..

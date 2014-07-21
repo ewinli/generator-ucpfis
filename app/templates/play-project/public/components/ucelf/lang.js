@@ -1,8 +1,10 @@
+define('ucelf/lang', function(require, exports, module){
+
 /**
  * Language Module
  */
 /*jshint curly: false, forin: false, noempty: false */
-define(function (require, exports, module) {
+
     'use strict';
 
     var objProto = Object.prototype,
@@ -199,4 +201,6 @@ define(function (require, exports, module) {
     };
 
     module.exports = _;
+
+
 });

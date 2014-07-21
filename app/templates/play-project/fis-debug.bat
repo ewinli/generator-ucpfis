@@ -1,3 +1,3 @@
 cd webapp
-fis release --domains -d play
+call fis release --domains -d play -w
 cd ..

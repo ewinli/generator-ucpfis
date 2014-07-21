@@ -1,3 +1,5 @@
+define('ucelf/template', function(require, exports, module){
+
 /**
  * Template Module
  * original author: Dexter.Yy
@@ -5,7 +7,7 @@
  * modified by Hinc
  */
 /*jshint evil: true */
-define(function (require, exports) {
+
     'use strict';
 
     var _ = require('./lang'),
@@ -126,4 +128,6 @@ define(function (require, exports) {
     exports.reload = function(str){
         delete exports.tplSettings.cache[str];
     };
+
+
 });
